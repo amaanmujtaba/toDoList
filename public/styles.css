@@ -1,44 +1,95 @@
 
-
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Neue Montreal";
+    overscroll-behavior: none;
+    background-color: lightgray;
+    color: black;
 }
 
+h1{
+    
+}
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #d82828;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#add-container {
     display: flex;
-    margin-top: 20px;
+    flex-direction: column;
+    position: fixed;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    background-color: lightgray;
+    border: black solid 7px;
+    border-radius: 10px;
+
+    
+    
 }
 
-#new-item {
+.itemsContainer{
+    overflow: auto;
+}
+.title{
+    text-align: center;
+}
+#add-task-form{
+    width: 100%;
+}
+
+#new-task {
     flex: 1;
+    width: 90%;
+    background-color: lightgray;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 4px;
 }
 
-#add-button {
-    padding: 10px;
+#add-task-button {
+    height: 100%;
     margin-left: 10px;
     background-color: #4caf50;
     color: #fff;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
 }
 
-#add-button:hover {
+
+#addButton{
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: black;
     background-color: #45a049;
 }
 
+.item{
+    display: flex;
+}
+
+ul {
+    list-style: none; /* Removes the default list bullets */
+    padding: 0; /* Optional: Removes default padding for unordered lists */
+}
+
+/* Add this to your existing styles.css or modify it accordingly */
+
+.item {
+    margin-bottom: 10px; /* Adjust the spacing between items if needed */
+}
+
+.item input[type="checkbox"] {
+    /* Adjust the size of the checkbox */
+    transform: scale(1.5); /* Adjust the scaling factor as needed */
+    margin-right: 5px; /* Adjust the spacing between the checkbox and text */
+}
+
+.item li {
+    font-size: 30px; /* Adjust the font size of the text */
+    display: inline; /* Ensure the text is displayed inline with the checkbox */
+}
+
+.todo-list{
+    overflow: auto;
+}

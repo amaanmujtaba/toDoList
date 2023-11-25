@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class = "container">
+        <div class = "title">
+            <h1> TO-DO List</h1>
+        </div>
+        <div class = "addItem">
+            <form id="add-task-form" action="/add-task" method="post">
+                <input type="text" id="new-task" name="newTask" placeholder="Add a new task" autocomplete="off">
+                <button type="submit" id = "addButton">+</button>
+        </div>
+        <% if(locals.tasks){ %>
+        <div class = "itemsContainer">
+            <ul id="todo-list">
+                <% tasks.forEach(task => { %>
+                    <div class="item">
+                        <input type="checkbox" id="task<%= task.task_id %>" name="taskCheckbox">
+                        <li><%= task %></li>
+                    </div>
+                <% }); %>    
+            </ul>
+        </div>
+
+        <% } %>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
